@@ -1,33 +1,83 @@
 # SaaS Churn Analytics
 
-This project analyzes customer churn for a SaaS platform using a real-world dataset. The goal is to uncover the key drivers behind user attrition and provide actionable business insights for improving customer retention.
+![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-black?logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical-blue?logo=numpy)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-orange?logo=plotly)
+![Seaborn](https://img.shields.io/badge/Seaborn-Statistical%20Viz-lightblue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
 
-## Project Structure
+---
 
-```
-saas-churn-analysis/
-├── data/                       # Contains the CSV files (accounts, subscriptions, churn_events, etc.)
-├── notebooks/
-│   └── analysis.ipynb          # Jupyter Notebook with the end-to-end data processing and analytics
-├── venv/                       # Python virtual environment
-└── README.md                   # Project documentation
-```
+## 📊 Overview
 
-## Methodology
+This project analyzes **customer churn in a SaaS platform** using a multi-table real-world dataset.  
+The goal is to identify **key churn drivers** and generate **actionable insights** to improve customer retention.
 
-1. **Data Preprocessing & Cleaning**: Formatted date types and handled missing values across multiple tables.
-2. **Aggregations & Logic Validations**: Implemented structured data logic (pre-aggregation of support tickets and feature usage) prior to joining metrics to the main table to avoid cartesian explosions and inaccurate measurements.
-3. **Data Integration**: Merged five disparate datasets (Accounts, Subscriptions, Churn Events, Support Tickets, Feature Usage) into a master analytical dataframe.
-4. **Visualizations**: Generated business-ready visualizations exploring the correlation between pricing tiers, feature usage, customer support occurrences, and churn trends.
+---
 
-## Key Insights
+## ⚙️ Methodology
 
-- **Overall Churn**: Stands at approximately ~70%.
-- **Impact of Support Tickets**: Support friction is a leading indicator for churn; churned accounts exhibit significantly higher average tickets.
-- **Feature Usage vs. Attrition**: Usage rates do not significantly differ between retained vs. churned customers, indicating that product adoption is not the bottleneck.
-- **Tenure Correlation**: Retained customers stay substantially longer (~4.5x), emphasizing that initial onboarding & issue resolution in the first few months are critical to crossing the "retention plateau."
+### 1. Data Cleaning & Preprocessing
+- Standardized date formats and handled missing values  
+- Ensured consistency across multiple datasets  
 
-## Tech Stack
-- **Python** (Pandas, NumPy)
-- **Data Visualization** (Matplotlib, Seaborn)
-- **Jupyter Notebook**
+### 2. Aggregations & Data Integrity
+- Performed **pre-aggregation of support tickets and feature usage**  
+- Prevented **cartesian joins and duplication errors**  
+- Maintained accurate metric calculations  
+
+### 3. Data Integration
+- Merged **5 datasets**:
+  - Accounts  
+  - Subscriptions  
+  - Churn Events  
+  - Support Tickets  
+  - Feature Usage  
+- Built a **master dataset (~700+ records)** using joins  
+
+### 4. Exploratory Data Analysis
+- Analyzed churn across:
+  - Plan tiers  
+  - Customer tenure  
+  - Feature usage  
+  - Support interactions  
+
+### 5. Visualization & Dashboard
+- Built **Matplotlib & Seaborn visualizations**  
+- Developed a **Streamlit dashboard** for interactive insights  
+
+---
+
+## 📈 Key Insights
+
+- **Churn Rate:** ~80% of users churned  
+- **Support Impact:** Higher support ticket volume correlates with increased churn  
+- **Engagement:** Low-engagement users show significantly higher churn risk  
+- **Tenure Effect:** Customers with longer tenure are far less likely to churn  
+
+---
+
+## 🛠 Tech Stack
+
+- **Python** (Pandas, NumPy)  
+- **Visualization** (Matplotlib, Seaborn)  
+- **Dashboard** (Streamlit)  
+- **Notebook** (Jupyter)  
+
+---
+
+## 🚀 How to Run
+
+```bash
+# Clone repo
+git clone https://github.com/Kalash-Harchandani/saas-churn-analysis.git
+
+# Navigate
+cd saas-churn-analysis
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run notebook
+jupyter notebook
